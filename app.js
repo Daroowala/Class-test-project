@@ -42,4 +42,13 @@
   function createUserAccount (){
     // console.log('email=>', signup_email.value);
     // console.log('password=>', signup_password.value);
+    createUserWithEmailAndPassword(auth, signup_email.value, signup_password.value)
+  .then((userCredential) => {
+    const user = userCredential.user;
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage);
+  });
   }
